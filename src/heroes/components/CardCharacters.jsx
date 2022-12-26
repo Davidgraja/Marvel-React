@@ -1,13 +1,9 @@
+import { Link } from "react-router-dom"
+import { DescriptionValidation } from "./"
 
 
-export const CardCharacters = ({name , description , thumbnail}) => {
+export const CardCharacters = ({name , description , thumbnail , id}) => {
     
-    const DescriptionValidation = ({description}) =>{
-
-        return (description) ? <p className="card-text"> {description}</p> : <></>
-
-    }
-
     const { path , extension } = thumbnail
 
     const srcImage = `${path}.${extension}`  
@@ -19,7 +15,7 @@ export const CardCharacters = ({name , description , thumbnail}) => {
                 <div className="card-body">
                     <h5 className="card-title"> { name } </h5>
                     <DescriptionValidation  description={ description }/>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                    <Link to={`/personajes/${ id }`} className="btn btn-primary">Mas..</Link>
                 </div>
             </div>
         </>
