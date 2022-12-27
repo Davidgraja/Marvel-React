@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom"
 import { DescriptionValidation } from "./"
 
-export const CardSeries_Comics = ({title , description , thumbnail}) => {
+export const CardSeries_Comics = ({title , description , thumbnail  , id , path}) => {
 
     return (
         <>
@@ -8,8 +9,8 @@ export const CardSeries_Comics = ({title , description , thumbnail}) => {
                 <img src={`${ thumbnail.path }.${ thumbnail.extension }`} className="card-img-top" alt=''/>
                 <div className="card-body">
                     <h5 className="card-title"> {title} </h5>
-                    <DescriptionValidation description={description}/>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                    <DescriptionValidation description={description} type={'card'}/>
+                    <Link to={ `${path}/${id}` } className="btn btn-primary">Go somewhere</Link>
                 </div>
             </div>
         </>

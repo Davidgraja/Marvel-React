@@ -1,28 +1,9 @@
-import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom"
-import { useFetch } from "../../hooks"
-import { ItemsUl } from "../components/ItemsUl";
+import { useNavigate } from "react-router-dom"
+import { DescriptionValidation } from "../components"
+import { ItemsUl } from "../components/ItemsUl"
 
-
-export const CharactersPage = () => {
-    const location = useParams();
+export const CharactersPage = ({item}) => {
     const navigate = useNavigate()
-    const [item, setItem] = useState([])
-    const {info , isLoading } = useFetch(`https://gateway.marvel.com:443/v1/public/characters/${location.id}?apikey=c7f464c69d07d97c49da306f506c5130`)
-
-    useEffect(() => {
-        setItem(info?.data?.results[0])
-    }, [isLoading])
-    
-
-    const DescriptionValidation = ({description}) =>{
-
-        return (description) ? <li className="list-group-item"> <b>Description : </b>{ description }</li> : <></>
-    
-    }
-    
-    
-    
     return (
         <div className="row mt-5">
             <div className="col-4 ">
@@ -35,7 +16,7 @@ export const CharactersPage = () => {
                 </button>
                 <h3>{item?.name}</h3>
                 <ul className="list-group list-group-flush">
-                    <DescriptionValidation description={item?.description} />
+                    <DescriptionValidation description={item?.description} type={'page'} />
                 </ul>
                 <h5 className="mt-3"> Comics </h5>
                 <ul className="list-group list-group-flush">

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useFetch } from '../../hooks';
 import { AlertLoading } from './AlertLoading';
-import { Card } from './Card';
+import { Cards } from './Cards';
 
 export const CardsList = ({page}) => {
 
@@ -20,7 +20,7 @@ export const CardsList = ({page}) => {
     return (
         <>
             {
-                isLoading ? <AlertLoading/> : <Card items={items} page={page}/>
+                isLoading ? <AlertLoading/> : <Cards items={items} page={page}/>
             }
             
         </>
