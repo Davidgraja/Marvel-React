@@ -18,7 +18,7 @@ export const Navbar = () => {
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
                         <li className="nav-item">
-                        <NavLink className={ (props)=> `nav-link ${ props.isActive ? 'active text-info' : '' }` } aria-current="page" to='/personajes'>Personajes</NavLink>
+                        <NavLink className={ (props)=> `nav-link ${ props.isActive ? 'active text-info' : '' }` } aria-current="page" to='/characters'>Personajes</NavLink>
                         </li>
 
                         <li className="nav-item">

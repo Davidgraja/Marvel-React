@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom"
 import { DescriptionValidation } from "../components"
 import { ItemsUl } from "../components"
 
-export const SeriesPage = ({item }) => {
+export const SeriesPage = ({item}) => {
 
     const navigate = useNavigate()
 

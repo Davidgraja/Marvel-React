@@ -1,9 +1,9 @@
+import { useNavigate } from "react-router-dom"
 import { DescriptionValidation } from "../components"
 import { ItemsUl } from "../components"
 
-export const ComicsPage = ({item ,page}) => {
-
-    console.log(item)
+export const ComicsPage = ({item}) => {
+    const navigate = useNavigate();
     return (
         <div className="row mt-5">
             <div className="col-4 ">
@@ -18,11 +18,7 @@ export const ComicsPage = ({item ,page}) => {
                 <ul className="list-group list-group-flush">
                     <DescriptionValidation description={item?.description} type={'page'} />
                 </ul>
-                {/* <h5 className="mt-3"> Comics </h5>
-                <ul className="list-group list-group-flush">
-                    <ItemsUl items={item?.comics?.items} />
-                </ul> */}
-
+            
                 <h5 className="mt-3"> Series </h5>
                 <ul className="list-group list-group-flush">
                     <li className="list-group-item"> { item?.series?.name } </li>

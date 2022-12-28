@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { DescriptionValidation } from "./"
 
-export const CardSeries_Comics = ({title , description , thumbnail  , id , path}) => {
+export const CardSeries_Comics = ({title , description , thumbnail  , id , page}) => {
 
     return (
         <>
@@ -10,7 +10,7 @@ export const CardSeries_Comics = ({title , description , thumbnail  , id , path}
                 <div className="card-body">
                     <h5 className="card-title"> {title} </h5>
                     <DescriptionValidation description={description} type={'card'}/>
-                    <Link to={ `${path}/${id}` } className="btn btn-primary">Go somewhere</Link>
+                    <Link to={ `/info/${id}?page=${page}` } className="btn btn-primary">Go somewhere</Link>
                 </div>
             </div>
         </>

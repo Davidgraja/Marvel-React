@@ -11,8 +11,6 @@ export const useFetch = (url) => {
 
     const getFetch = async () =>{
 
-        try {
-            
             setstate({
                 ...state,
                 isLoading : true
@@ -27,12 +25,7 @@ export const useFetch = (url) => {
                 hasError : null
             })
             
-        } catch (error) {
-            setstate({
-                ...state,
-                hasError : error
-            })
-        }
+        
     }
 
 
