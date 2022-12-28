@@ -4,3 +4,4 @@ export * from './CardCharacters';
 export * from './CardSeries_Comics';
 export * from './CardsList';
 export * from './ValidationOfDescription';
+export * from './ItemsUl';

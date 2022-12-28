@@ -1,22 +1,19 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 import { useFetch } from "../../hooks"
-import { CharactersPage } from "./CharactersPage";
+import { CharactersPage , ComicsPage, SeriesPage } from "./";
 
 
 export const PagesInformation = () => {
-    const {id} = useParams();
     const {pathname}  = useLocation()
     let page ;
     
-    pathname.includes('personajes') ? page = 'personajes' :
+    pathname.includes('characters') ? page = 'characters' :
     pathname.includes('comics') ? page = 'comics' :
     pathname.includes('series') ? page = 'series' : page = ''
 
-
-    const navigate = useNavigate()
     const [item, setItem] = useState([])
-    const {info , isLoading } = useFetch(`https://gateway.marvel.com:443/v1/public/characters/${id}?apikey=c7f464c69d07d97c49da306f506c5130`)
+    const {info , isLoading } = useFetch(`https://gateway.marvel.com:443/v1/public${pathname}?apikey=c7f464c69d07d97c49da306f506c5130`)
 
     useEffect(() => {
         setItem(info?.data?.results[0])
@@ -24,12 +21,13 @@ export const PagesInformation = () => {
     
 
     const SelectionOfPage = ({page , item}) =>{
-        if(page == 'personajes' ) return <CharactersPage item={ item } />
+        if(page == 'characters' ) return <CharactersPage item={ item } />
+        else if(page == 'comics')  return <ComicsPage item={ item } page={page} />
+        else  return <SeriesPage item={ item } page={page} />
     }
 
 
     return (
         <SelectionOfPage page={page} item={item}/>
-        
     )
 }

@@ -10,16 +10,17 @@ export const HeroesRooters = () => {
         <div>
 
             <Routes>
+                <Route path='characters/:id' element={<PagesInformation/>}></Route>
+                <Route path='comics/:id' element={<PagesInformation/>}></Route>
+                <Route path='series/:id' element={<PagesInformation/>}></Route>
 
-                <Route path='/personajes' element={<Personajes/>}></Route>
-                <Route path='/comics' element={<Comic/>}></Route>
-                <Route path='/series' element={<Series/>}></Route>
-                <Route path='/search' element={<Search/>}></Route>
-                <Route path='/personajes/:id' element={<PagesInformation/>}></Route>
-                <Route path='/comics/:id' element={<PagesInformation/>}></Route>
-                <Route path='/series/:id' element={<PagesInformation/>}></Route>
+                <Route path='characters' element={<Personajes/>}></Route>
+                <Route path='comics' element={<Comic/>}></Route>
+                <Route path='series' element={<Series/>}></Route>
+                <Route path='search' element={<Search/>}></Route>
+                
 
-                <Route path='/*' element={<Navigate to={'personajes'} />}></Route>
+                <Route path='/*' element={<Navigate to={'characters'} />}></Route>
 
             </Routes>
         </div>

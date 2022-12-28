@@ -15,7 +15,7 @@ export const CardCharacters = ({name , description , thumbnail , id}) => {
                 <div className="card-body">
                     <h5 className="card-title"> { name } </h5>
                     <DescriptionValidation  description={ description }/>
-                    <Link to={`/personajes/${ id }`} className="btn btn-primary">Mas..</Link>
+                    <Link to={`/characters/${ id }`} className="btn btn-primary">Mas..</Link>
                 </div>
             </div>
         </>
