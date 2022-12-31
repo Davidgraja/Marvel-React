@@ -3,3 +3,18 @@
     grid-template-columns: repeat(auto-fit , 400px);
     justify-content: center;
 }
+
+.login-container{
+    display: grid ;
+    height: 100vh;
+    justify-content: center ;
+    align-content: center;
+}
+
+.form-login{
+    /* border: 1px solid rgb(102, 126, 123); */
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 0px 10px rgb(177, 222, 230) ;
+
+}

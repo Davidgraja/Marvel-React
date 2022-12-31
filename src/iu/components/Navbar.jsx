@@ -18,7 +18,7 @@ export const Navbar = () => {
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
                         <li className="nav-item">
-                        <NavLink className={ (props)=> `nav-link ${ props.isActive ? 'active text-info' : '' }` } aria-current="page" to='/characters'>Personajes</NavLink>
+                        <NavLink className={ (props)=> `nav-link ${ props.isActive ? 'active text-info' : '' }` } aria-current="page" to='/characters'>Characters</NavLink>
                         </li>
 
                         <li className="nav-item">
@@ -28,11 +28,7 @@ export const Navbar = () => {
                         <li className="nav-item">
                         <NavLink className={ (props)=> `nav-link ${ props.isActive ? 'active text-info' : '' }` } to={'/series'}>Series</NavLink>
                         </li>
-
-                        <li className="nav-item">
-                        <NavLink className={ (props)=> `nav-link ${ props.isActive ? 'active text-info' : '' }` } to='/search'>Search</NavLink>
-                        </li> 
-
+                        
                     </ul>
 
                     <p className="my-2 mx-2  p-2 border-bottom border-success">Julio David gp</p>

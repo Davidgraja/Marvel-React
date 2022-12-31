@@ -15,8 +15,8 @@ export const SeriesPage = ({item}) => {
 
             <div className="col-8">
                 
-                <button className="btn btn-outline-primary" onClick={()=> navigate(-1)}>
-                    Regresar
+                <button className="btn btn-outline-primary mb-3" onClick={()=> navigate(-1)}>
+                    Return
                 </button>
                 
                 <h3>{item?.title}</h3>

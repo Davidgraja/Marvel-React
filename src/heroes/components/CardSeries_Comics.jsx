@@ -10,7 +10,7 @@ export const CardSeries_Comics = ({title , description , thumbnail  , id , page}
                 <div className="card-body">
                     <h5 className="card-title"> {title} </h5>
                     <DescriptionValidation description={description} type={'card'}/>
-                    <Link to={ `/info/${id}?page=${page}` } className="btn btn-primary">Go somewhere</Link>
+                    <Link to={ `/info/${id}?page=${page}` } className="btn btn-primary">More ...</Link>
                 </div>
             </div>
         </>

@@ -6,13 +6,13 @@ export const CharactersPage = ({item}) => {
     const navigate = useNavigate()
     return (
         <div className="row mt-5">
-            <div className="col-4 ">
+            <div className="img-fluid col-md-4">
                 <img src={`${item?.thumbnail?.path}.${item?.thumbnail?.extension}`} alt={item?.name} className="img-thumbnail animate__animated animate__fadeInLeft" />
             </div>
 
-            <div className="col-8">
-                <button className="btn btn-outline-primary" onClick={()=> navigate(-1)}>
-                    Regresar
+            <div className="col-8 p-4">
+                <button className="btn btn-outline-primary my-3" onClick={()=> navigate(-1)}>
+                    Return
                 </button>
                 <h3>{item?.name}</h3>
                 <ul className="list-group list-group-flush">

@@ -6,26 +6,32 @@ export const useFetch = (url) => {
         data : null,
         isLoading : true,
         hasError : null
-
     })
 
     const getFetch = async () =>{
-
-            setstate({
-                ...state,
-                isLoading : true
-            })
-            
+        try {
             const res = await fetch(url);
             const data = await res.json();
-
-            setstate({
-                data,
-                isLoading : false,
-                hasError : null
-            })
             
+            const codeStatus = res.status
+
+            if(codeStatus !=200 ) throw new Error(res.statusText )
         
+            setstate({
+                ...state,
+                data,
+                isLoading: false,
+            })
+
+            
+        } catch (error) {
+            setstate({
+                ...state,
+                hasError : error.message,
+                
+            })
+        }
+
     }
 
 

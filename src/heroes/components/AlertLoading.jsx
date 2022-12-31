@@ -1,8 +1,8 @@
 
-export const AlertLoading = () => {
+export const AlertLoading = ({color , message}) => {
     return (
-        <div className="alert alert-primary" role="alert">
-            Cargando informacion
+        <div className= {`alert alert-${color}`} role="alert">
+            { message }
         </div>
     )
 }
