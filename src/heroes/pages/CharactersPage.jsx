@@ -7,30 +7,30 @@ export const CharactersPage = ({item}) => {
     return (
         <div className="row mt-5">
             <div className="img-fluid col-md-4">
-                <img src={`${item?.thumbnail?.path}.${item?.thumbnail?.extension}`} alt={item?.name} className="img-thumbnail animate__animated animate__fadeInLeft" />
+                <img src={`${item.thumbnail.path}.${item.thumbnail.extension}`} alt={item.name} className="img-thumbnail animate__animated animate__fadeInLeft" />
             </div>
 
             <div className="col-8 p-4">
                 <button className="btn btn-outline-primary my-3" onClick={()=> navigate(-1)}>
                     Return
                 </button>
-                <h3>{item?.name}</h3>
+                <h3>{item.name}</h3>
                 <ul className="list-group list-group-flush">
-                    <DescriptionValidation description={item?.description} type={'page'} />
+                    <DescriptionValidation description={item.description} type={'page'} />
                 </ul>
                 <h5 className="mt-3"> Comics </h5>
                 <ul className="list-group list-group-flush">
-                    <ItemsUl items={item?.comics?.items} />
+                    <ItemsUl items={item.comics.items} />
                 </ul>
 
                 <h5 className="mt-3"> Series </h5>
                 <ul className="list-group list-group-flush">
-                    <ItemsUl items={item?.series?.items} />
+                    <ItemsUl items={item.series.items} />
                 </ul>
 
                 <h5 className="mt-3"> Stories </h5>
                 <ul className="list-group list-group-flush">
-                    <ItemsUl items={item?.stories?.items} />
+                    <ItemsUl items={item.stories.items} />
                 </ul>
             </div>
         </div>

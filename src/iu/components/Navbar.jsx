@@ -1,6 +1,15 @@
-import { NavLink } from "react-router-dom"
+import { useContext } from "react"
+import { NavLink, useNavigate } from "react-router-dom"
+import { AuthContext } from '../../auth/context/AuthContext';
 
 export const Navbar = () => {
+    const {user , logout} = useContext(AuthContext)
+    const navigate = useNavigate()
+
+    const handleLogaout = () =>{
+        logout()
+        navigate('/login' , {replace : true})    
+    }
     return (
         <nav className="navbar navbar-expand-lg bg-light">
             <div className="container-fluid">
@@ -31,8 +40,8 @@ export const Navbar = () => {
                         
                     </ul>
 
-                    <p className="my-2 mx-2  p-2 border-bottom border-success">Julio David gp</p>
-                    <button className="btn btn-outline-success" type="submit">Logaout</button>
+                    <p className="my-2 mx-2  p-2 border-bottom border-success">{user?.name}</p>
+                    <button  className="btn btn-outline-success" type="submit" onClick={ handleLogaout }>Logaout</button>
                 </div>
             </div>
         </nav>
