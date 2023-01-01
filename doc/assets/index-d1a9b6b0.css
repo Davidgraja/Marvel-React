@@ -1,0 +1,1 @@
+.div-container-cards{display:grid;grid-template-columns:repeat(auto-fit,400px);justify-content:center}.login-container{display:grid;height:100vh;justify-content:center;align-content:center}.form-login{padding:15px;border-radius:6px;box-shadow:0 0 10px #b1dee6}
