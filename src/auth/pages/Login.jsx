@@ -35,7 +35,7 @@ export const Login = () => {
 
                     <div  className="form-text">Ingrese su nombre por favor</div>
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary">Ingresar</button>
             </form>
         
         </section>
